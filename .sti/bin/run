@@ -1,5 +1,6 @@
+#!/bin/sh
 
-rt USER_ID=$(id -u)
+export USER_ID=$(id -u)
 
 export GROUP_ID=$(id -g)
 
