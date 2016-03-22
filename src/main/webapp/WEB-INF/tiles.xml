@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	
+    <!-- Template for views -->
+    
+    <definition name="mainTemplate" template="/WEB-INF/views/Layouts/Main.jsp">
+        <put-attribute name="title" value="" />
+    	<put-attribute name="header" value="/WEB-INF/views/Layouts/header.jsp" /> 
+    	<put-attribute name="body" value="" />
+    	<put-attribute name="footer" value="/WEB-INF/views/Layouts/footer.jsp" />
+    </definition>
+    
+    <!-- Views -->
+    
+      <definition name="login" extends="mainTemplate">
+    	<put-attribute name="title" value="CCIX-LAE Migration - Login" />  	 
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" /> 		
+    </definition>
+    
+    <definition name="home" extends="mainTemplate">
+    	<put-attribute name="title" value="CCIX-LAE Migration - Home" />
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+    </definition>
+    
+        <definition name="edit" extends="mainTemplate">
+    	<put-attribute name="title" value="CCIX-LAE Migration - Edit Plan" />
+		<put-attribute name="body" value="/WEB-INF/views/edit.jsp" />
+    </definition>
+    
+        <definition name="view" extends="mainTemplate">
+    	<put-attribute name="title" value="CCIX-LAE Migration - View Plan" />
+		<put-attribute name="body" value="/WEB-INF/views/view.jsp" />
+    </definition>
+    
+</tiles-definitions>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
+ xmlns:context="http://www.springframework.org/schema/context"  
+ xsi:schemaLocation="http://www.springframework.org/schema/beans  
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+  http://www.springframework.org/schema/context  
+  http://www.springframework.org/schema/context/spring-context-3.0.xsd">  
+  
+ <!-- telling container to take care of annotations stuff -->  
+ <context:annotation-config />  
+  
+ <!-- declaring base package -->  
+ <context:component-scan base-package="com.cisco.gis" />  
+  
+ <!-- adding view resolver to show jsp's on browser -->  
+ <bean id="viewResolver"  
+  class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+  <property name="prefix" value="/WEB-INF/views/" />  
+  <property name="suffix" value=".jsp" />  
+ </bean>   
+  
+ <!-- declare datasource bean -->  
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+  <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+   <property name="url" value="jdbc:oracle:thin:@ldap://ldap-ldprd.cisco.com:5000/cn=OracleContext,dc=cisco,dc=com/CCIXNP"/>
+  <!-- <property name="url" value="jdbc:oracle:thin:@ldap://ldap-ldprd.cisco.com:5000/cn=OracleContext,dc=cisco,dc=com/CCIXPROD"/> --> 
+  <property name="username" value="newapp_user" /> 
+   <property name="password" value="user4dev" />  
+   <!-- <property name="password" value="ccix4user" /> -->   
+ </bean>  
+</beans>
